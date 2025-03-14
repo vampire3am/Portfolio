@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Md Samshad | Creative Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons - load asynchronously -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <!-- Google Fonts - load efficiently -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <!-- AOS Animation Library - load asynchronously -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  
+  <!-- Preload critical scripts -->
+  <link rel="preload" href="script.js" as="script">
+  
+  <!-- Add noscript fallback for CSS -->
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </noscript>
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-content">
+      <div class="loader-logo">Welcome to Vampiric Legacy</div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+      <div class="loader-text">0%</div>
+    </div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+
+  <!-- 3D Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Custom Cursor -->
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="cursor-text"></div>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="#home" class="logo-link">
+            <span class="logo-text">Vampire</span>
+            <span class="logo-dot"></span>
+          </a>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+          <div class="nav-toggle-icon">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active" data-cursor-text="Home">Home</a></li>
+          <li><a href="#about" data-cursor-text="About">About</a></li>
+          <li><a href="#projects" data-cursor-text="Work">Projects</a></li>
+          <li><a href="#playground" data-cursor-text="Play">Playground</a></li>
+          <li><a href="#contact" data-cursor-text="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="theme-toggle" id="themeToggle" data-cursor-text="Theme">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+          <div class="hero-intro">Hello, I'm</div>
+          <h1 class="hero-title">
+            <span class="hero-name">Md Samshad</span>
+            <div class="hero-roles">
+              <div class="hero-roles-list">
+                <span>Student</span>
+                <span>Blogger</span>
+                <span>Photographer</span>
+                <span>Digital Artist</span>
+                <span>Content Creator</span>
+              </div>
+            </div>
+          </h1>
+          <p class="hero-description">
+            Creating immersive digital experiences through the fusion of art, technology, and storytelling.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn primary-btn" data-cursor-text="View Work">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn secondary-btn" data-cursor-text="Contact">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+          <div class="profile-container">
+            <div class="profile-image">
+              <img src="WhatsApp Image 2025-02-14 at 18.04.00_accab7aa.jpg" alt="Md Samshad">
+            </div>
+            <div class="rotating-lights">
+              <div class="light light-1"></div>
+              <div class="light light-2"></div>
+              <div class="light light-3"></div>
+            </div>
+            <div class="floating-shapes">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+              <div class="shape shape-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-text">Scroll Down</div>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-subtitle">About Me</div>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-image" data-aos="fade-right">
+          <div class="image-wrapper">
+            <img src=" IMG_9922.JPG" alt="About Samshad">
+            <div class="image-overlay"></div>
+          </div>
+          <div class="experience-badge">
+            <div class="experience-years">3+</div>
+            <div class="experience-text">Years of<br>Experience</div>
+          </div>
+        </div>
+        <div class="about-text" data-aos="fade-left">
+          <p class="about-intro">
+            I’m Md Samshad, a passionate programmer with a love for tech and a drive to shape my future in the field. Outside of coding, I dive into poetry, writing, and reading to stay creative and balanced.        </p>
+          <p>
+            I’m an extrovert who thrives in conversations and values strong communication. I carry a healthy amount of confidence and ego, but honesty and loyalty are my core principles—those are the things that truly matter to me.
+
+
+          </p>
+          <p>
+    
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-number" data-count="20">0</div>
+              <div class="stat-label">Projects<br>Completed</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-count="20">0</div>
+              <div class="stat-label">Happy<br>Clients</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-count="15">0</div>
+              <div class="stat-label">Personal <br>Projects</div>
+            </div>
+          </div>
+          <div class="about-cta">
+            <a href="#" class="btn primary-btn" data-cursor-text="Download">
+              <span>Download CV</span>
+              <i class="fas fa-download"></i>
+            </a>
+            <div class="social-links">
+              <a href="https://github.com/vampire3am" class="social-link" data-cursor-text="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61560686467725" class="social-link" data-cursor-text="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://x.com/maybee_vampire" class="social-link" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/xryce_7/" class="social-link" data-cursor-text="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-subtitle">My Expertise</div>
+        <h2 class="section-title">Skills & Tools</h2>
+      </div>
+      <div class="skills-content">
+        <div class="skills-categories" data-aos="fade-up">
+          <div class="skill-category active" data-category="creative">
+            <div class="category-icon"><i class="fas fa-camera"></i></div>
+            <div class="category-name">Creative</div>
+          </div>
+          <div class="skill-category" data-category="technical">
+            <div class="category-icon"><i class="fas fa-code"></i></div>
+            <div class="category-name">Technical</div>
+          </div>
+          <div class="skill-category" data-category="soft">
+            <div class="category-icon"><i class="fas fa-comments"></i></div>
+            <div class="category-name">Soft Skills</div>
+          </div>
+        </div>
+        
+        <div class="skills-display">
+          <div class="skills-list active" data-skills="creative">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="skill-info">
+                <div class="skill-name">Photography</div>
+                <div class="skill-percent">90%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-info">
+                <div class="skill-name">Video Editing</div>
+                <div class="skill-percent">85%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="skill-info">
+                <div class="skill-name">Graphic Design</div>
+                <div class="skill-percent">80%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="skill-info">
+                <div class="skill-name">Content Creation</div>
+                <div class="skill-percent">95%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="95%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-list" data-skills="technical">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="skill-info">
+                <div class="skill-name">HTML/CSS</div>
+                <div class="skill-percent">85%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-info">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-percent">75%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="75%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="skill-info">
+                <div class="skill-name">Adobe Creative Suite</div>
+                <div class="skill-percent">90%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="skill-info">
+                <div class="skill-name">3D Modeling</div>
+                <div class="skill-percent">65%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="65%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-list" data-skills="soft">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="skill-info">
+                <div class="skill-name">Communication</div>
+                <div class="skill-percent">95%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="95%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-info">
+                <div class="skill-name">Project Management</div>
+                <div class="skill-percent">85%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="skill-info">
+                <div class="skill-name">Problem Solving</div>
+                <div class="skill-percent">90%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="skill-info">
+                <div class="skill-name">Creativity</div>
+                <div class="skill-percent">100%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="100%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-subtitle">My Work</div>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      
+      <div class="projects-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="photo">Photography</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="interactive">Interactive</button>
+      </div>
+      
+      <div class="projects-grid">
+ 
+        <!-- Project 2: Minimalist Blog Platform -->
+        <div class="project-item web design" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400?text=Blog+Platform" alt="Minimalist Blog Platform">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Minimalist Blog Platform</h3>
+              <div class="project-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <p class="project-description">
+                A clean, minimalist blog platform with dark mode, reading time estimation, and content categorization.
+              </p>
+              <div class="project-links">
+                <a href="#project-modal-2" class="project-link modal-trigger" data-cursor-text="View">View Project</a>
+                <a href="https://codepen.io" target="_blank" class="project-demo" data-cursor-text="Demo">Live Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3: Portrait Photography Series -->
+        <div class="project-item photo" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400?text=Portrait+Series" alt="Portrait Photography Series">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Portrait Photography Series</h3>
+              <div class="project-tags">
+                <span class="tag">Photography</span>
+                <span class="tag">Portraiture</span>
+                <span class="tag">Lighting</span>
+              </div>
+              <p class="project-description">
+                A collection of portrait photographs exploring human emotion through dramatic lighting and composition.
+              </p>
+              <div class="project-links">
+                <a href="#project-modal-3" class="project-link modal-trigger" data-cursor-text="View">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4: Interactive 3D Product Viewer -->
+        <div class="project-item web interactive" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400?text=3D+Product+Viewer" alt="3D Product Viewer">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">3D Product Viewer</h3>
+              <div class="project-tags">
+                <span class="tag">Three.js</span>
+                <span class="tag">WebGL</span>
+                <span class="tag">Interactive</span>
+              </div>
+              <p class="project-description">
+                An interactive 3D product viewer allowing users to rotate, zoom, and explore products in real-time.
+              </p>
+              <div class="project-links">
+                <a href="#project-modal-4" class="project-link modal-trigger" data-cursor-text="View">View Project</a>
+                <a href="https://codepen.io" target="_blank" class="project-demo" data-cursor-text="Demo">Live Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5: Brand Identity Design -->
+        <div class="project-item design" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400?text=Brand+Identity" alt="Brand Identity Design">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Brand Identity Design</h3>
+              <div class="project-tags">
+                <span class="tag">Branding</span>
+                <span class="tag">Logo Design</span>
+                <span class="tag">Typography</span>
+              </div>
+              <p class="project-description">
+                Complete brand identity design including logo, color palette, typography, and brand guidelines.
+              </p>
+              <div class="project-links">
+                <a href="#project-modal-5" class="project-link modal-trigger" data-cursor-text="View">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 6: Interactive Music Visualizer -->
+        <div class="project-item interactive" data-aos="fade-up" data-aos-delay="600">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/600x400?text=Music+Visualizer" alt="Interactive Music Visualizer">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Interactive Music Visualizer</h3>
+              <div class="project-tags">
+                <span class="tag">Web Audio API</span>
+                <span class="tag">Canvas</span>
+                <span class="tag">Interactive</span>
+              </div>
+              <p class="project-description">
+                A real-time music visualizer that creates stunning visual patterns based on audio input.
+              </p>
+              <div class="project-links">
+                <a href="#project-modal-6" class="project-link modal-trigger" data-cursor-text="View">View Project</a>
+                <a href="https://codepen.io" target="_blank" class="project-demo" data-cursor-text="Demo">Live Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Playground Section -->
+  <section id="playground" class="playground">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-subtitle">Interactive Experiences</div>
+        <h2 class="section-title">Creative Playground</h2>
+      </div>
+      
+      <div class="playground-content">
+        <div class="playground-intro" data-aos="fade-up">
+          <p>Explore these interactive mini-projects and experiments. Feel free to play around!</p>
+        </div>
+        
+        <div class="playground-grid">
+          <!-- Mini Project 1: Color Palette Generator -->
+          <div class="playground-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="playground-card">
+              <div class="playground-header">
+                <h3>Color Palette Generator</h3>
+                <div class="playground-icon"><i class="fas fa-palette"></i></div>
+              </div>
+              <div class="playground-body">
+                <p>Generate harmonious color palettes with a single click. Perfect for designers and artists.</p>
+                <div class="color-generator">
+                  <div class="color-palette">
+                    <div class="color-swatch" style="background-color: #FF5757"></div>
+                    <div class="color-swatch" style="background-color: #FFD166"></div>
+                    <div class="color-swatch" style="background-color: #06D6A0"></div>
+                    <div class="color-swatch" style="background-color: #118AB2"></div>
+                    <div class="color-swatch" style="background-color: #073B4C"></div>
+                  </div>
+                  <button class="generator-btn" id="generatePalette">Generate New Palette</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mini Project 2: Particle Text Effect -->
+          <div class="playground-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="playground-card">
+              <div class="playground-header">
+                <h3>Particle Text Effect</h3>
+                <div class="playground-icon"><i class="fas fa-font"></i></div>
+              </div>
+              <div class="playground-body">
+                <p>Interactive text effect with particles that respond to mouse movement.</p>
+                <div class="particle-text-container">
+                  <canvas id="particleTextCanvas"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mini Project 3: Memory Game -->
+          <div class="playground-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="playground-card">
+              <div class="playground-header">
+                <h3>Memory Game</h3>
+                <div class="playground-icon"><i class="fas fa-gamepad"></i></div>
+              </div>
+              <div class="playground-body">
+                <p>Test your memory with this simple card matching game.</p>
+                <div class="memory-game">
+                  <div class="memory-stats">
+                    <div class="memory-moves">Moves: <span id="moveCount">0</span></div>
+                    <button class="memory-reset" id="resetMemory">Reset Game</button>
+                  </div>
+                  <div class="memory-grid" id="memoryGrid"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-subtitle">Get In Touch</div>
+        <h2 class="section-title">Contact Me</h2>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <h3>Let's Talk</h3>
+              <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+            </div>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-text">
+                  <h4>Location</h4>
+                  <p>New York City, NY, USA</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-text">
+                  <h4>Email</h4>
+                  <p>contact@luciusmeshach.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="contact-text">
+                  <h4>Phone</h4>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-social">
+              <a href="#" class="social-link" data-cursor-text="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link" data-cursor-text="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" data-cursor-text="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-container" data-aos="fade-left">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required>
+              <label for="name">Your Name</label>
+              <div class="form-border"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required>
+              <label for="email">Your Email</label>
+              <div class="form-border"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" required>
+              <label for="subject">Subject</label>
+              <div class="form-border"></div>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" required></textarea>
+              <label for="message">Your Message</label>
+              <div class="form-border"></div>
+            </div>
+            <button type="submit" class="btn primary-btn submit-btn" data-cursor-text="Send">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo-text">LM<span class="logo-dot"></span></div>
+          <p>Creating digital experiences that inspire.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#playground">Playground</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to my newsletter for the latest updates and creative insights.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lucius Meshach. All Rights Reserved.</p>
+        <a href="#home" class="back-to-top" id="backToTop" data-cursor-text="Top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modals -->
+  <!-- Project Modal 1: Interactive Photo Gallery -->
+  <div id="project-modal-1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Interactive Photo Gallery</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img src="https://via.placeholder.com/1200x800?text=Gallery+Screenshot+1" alt="Gallery Screenshot 1">
+          <img src="https://via.placeholder.com/1200x800?text=Gallery+Screenshot+2" alt="Gallery Screenshot 2">
+          <img src="https://via.placeholder.com/1200x800?text=Gallery+Screenshot+3" alt="Gallery Screenshot 3">
+        </div>
+        <div class="modal-details">
+          <div class="modal-description">
+            <h3>Project Overview</h3>
+            <p>An interactive photo gallery built with JavaScript that allows users to filter, search, and view images with smooth animations and transitions. The gallery features a responsive grid layout, lightbox functionality, and category filtering.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li>Responsive CSS Grid layout that adapts to any screen size</li>
+              <li>Advanced filtering system with multiple category support</li>
+              <li>Custom lightbox with touch support and keyboard navigation</li>
+              <li>Image lazy loading for improved performance</li>
+              <li>Search functionality with real-time results</li>
+              <li>3D hover effects using CSS transforms</li>
+            </ul>
+            
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS Grid</span>
+              <span class="tech-tag">              <span class="tech-tag">CSS Grid</span>
+              <span class="tech-tag">Intersection Observer API</span>
+            </div>
+          </div>
+          
+          <div class="modal-demo">
+            <h3>Live Demo</h3>
+            <div class="demo-embed">
+              <iframe src="about:blank" data-src="https://codepen.io/your-username/full/example-pen" frameborder="0"></iframe>
+              <div class="demo-placeholder">
+                <button class="load-demo">Load Interactive Demo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com" target="_blank" class="btn secondary-btn">
+          <i class="fab fa-github"></i>
+          <span>View Code</span>
+        </a>
+        <a href="https://codepen.io" target="_blank" class="btn primary-btn">
+          <i class="fas fa-external-link-alt"></i>
+          <span>Live Demo</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Project Modals (2-6) would be similar in structure -->
+
+  <!-- Scripts - load with defer and async where appropriate -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+<link rel="stylesheet" href="style.css">
